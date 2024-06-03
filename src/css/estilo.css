@@ -85,14 +85,112 @@ header nav ul li a:hover {
         gap: 10px;
     }
 }
-
-main {
-    padding: 20px;
+/* Estilizando a barra de rolagem para navegadores baseados em WebKit */
+::-webkit-scrollbar {
+    width: 5px; /* Largura da barra de rolagem */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: linear-gradient(to right,   #86a8e7,#ffffff);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
 
+
+main {
+    background-image: url('https://oceanpanel.org/wp-content/uploads/2022/05/AdobeStock_142163749-scaled.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    margin: 5px;
+    color: #f1f1f1;
+}
+main::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição semi-transparente escura */
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50%;
+    top: 80%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    border-radius: 45%;
+    animation: wave-animation 4s infinite linear;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
 section {
     text-align: center;
     margin-bottom: 20px;
+}
+
+#card_problema {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.info_card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.info_card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.info_card p {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.info_card p strong {
+    color: #007BFF;
+}
+
+.info_card a{
+    text-decoration: none;
 }
 
 footer {
