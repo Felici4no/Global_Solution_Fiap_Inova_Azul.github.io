@@ -110,6 +110,12 @@ main {
     padding: 20px;
     margin: 5px;
     color: #f1f1f1;
+
+    font-family: "Linefont", system-ui;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 main::before{
     content: "";
