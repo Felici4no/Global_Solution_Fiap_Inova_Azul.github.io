@@ -24,6 +24,5 @@ function escreverPalavra() {
 
 setInterval(escreverPalavra, 150); // Altera a palavra a cada 150 milissegundos
 
-// Chamada inicial
 escreverPalavra();
     
