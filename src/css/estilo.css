@@ -146,9 +146,9 @@ section {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    
 }
-
-.info_card {
+.info_card_main{
     transition: 0.3s;
     background-color: #ffffff;
     border-radius: 8px;
@@ -157,7 +157,9 @@ section {
     padding: 20px;
     text-align: center;
     overflow: hidden;
+    color: black;
 }
+
 .info_card_0{
     transition: 0.3s;
     background-color: #ffffffa5;
@@ -170,24 +172,24 @@ section {
     color: black;
 }
 
-.info_card img , .info_card_0 img {
+.info_card img , .info_card_0 img , .info_card_main img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-.info_card p, .info_card_0 p{
+.info_card p, .info_card_0 p, .info_card_main p{
     font-size: 16px;
     color: #333333;
     margin-top: 10px;
     
 }
 
-.info_card p strong, .info_card_0 p strong {
+.info_card p strong, .info_card_0 p strong, .info_card_main p strong {
     color: #007BFF;
 }
 
-.info_card a, .info_card_0 a{
+.info_card a, .info_card_0 a,.info_card_main a{
     text-decoration: none;
 }
 
@@ -218,6 +220,75 @@ fieldset button:active{
     background-color: rgb(140, 255, 136);
     color: rgb(255, 255, 255);
 }
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 75%;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o carrossel na página */
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%; /* Altera a largura para ocupar toda a largura da tela em telas menores */
+    }
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Alterado para 100% para garantir que o conteúdo do carrossel ocupe toda a largura disponível */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 200%; /* Garante que o track seja o dobro da largura do container para exibir 2 cards por vez */
+}
+
+.info_card{
+    flex: 0 0 50%; /* Alterado para 50% para exibir 2 cards por vez */
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel-button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Optional: Add some hover effect for buttons */
+.carousel-button:hover {
+    background-color: #0056b3;
+}
+
+
 footer {
     text-align: center;
     padding: 10px;
